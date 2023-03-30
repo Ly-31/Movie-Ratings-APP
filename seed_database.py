@@ -32,14 +32,14 @@ model.db.session.commit()
 
 
 
-for n in range(10):
+for n in range(1, 10):
     email = f'user{n}@test.com'  # Voila! A unique email!
     password = 'test'
 
     user = crud.create_user(email, password)
     model.db.session.add(user)
 
-    for i in range(10):
+    for i in range(1, 10):
         score = randint(1,5)
         movie = choice(movies_in_db)
         rating = crud.create_rating(score, movie, user)
